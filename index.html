@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://images.metahub.space">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <style>
     :root {
       --bg: #0b0f19;
@@ -1528,6 +1528,54 @@
     .ep-info small { font-size: 0.76rem; color: var(--text-muted); }
     .chip-ep { color: #c4b5fd; border-color: rgba(167, 139, 250, 0.5); }
   </style>
+<style id="pelisstream-skin">
+/* ===== PelisStream · skin cine (solo visual) ===== */
+:root{--bg:#07090f}
+@media (min-width:1700px){html{font-size:17px}}
+body::before{background:radial-gradient(900px 500px at 6% -10%,rgba(56,189,248,.10),transparent 60%)}
+header,.movie-card,.home-btn,.hero-chip,.btn-ghost{backdrop-filter:none;-webkit-backdrop-filter:none}
+header{background:linear-gradient(180deg,rgba(0,0,0,.92),rgba(0,0,0,.45));border-bottom:0;padding:1rem 2.5rem .8rem;transition:background .3s}
+header.scrolled{background:#07090f;box-shadow:0 8px 24px rgba(0,0,0,.6)}
+.logo{font-size:1.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 0 18px rgba(56,189,248,.35)}
+.home-btn,.pill{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+.hero{min-height:clamp(460px,80vh,780px);border-bottom:0}
+.hero-bg{animation:none;transform:none;background-position:center 20%}
+.hero::before{background:linear-gradient(90deg,rgba(7,9,15,.97) 4%,rgba(7,9,15,.6) 42%,rgba(7,9,15,0) 85%)}
+.hero::after{background:linear-gradient(0deg,var(--bg) 1%,rgba(7,9,15,.65) 28%,transparent 62%)}
+.hero-inner{max-width:none;padding:3rem 2.5rem 4rem}
+.hero-title{font-size:clamp(2.4rem,5.6vw,4.6rem);font-weight:800;letter-spacing:-.03em;text-shadow:0 4px 28px rgba(0,0,0,.8)}
+.hero-synopsis{max-width:640px;font-size:1.08rem;line-height:1.55;text-shadow:0 2px 12px rgba(0,0,0,.9);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.btn-play,.btn-ghost{border-radius:.45rem;padding:.9rem 2rem;font-size:1.05rem;font-weight:800}
+.btn-play{animation:none;box-shadow:0 6px 22px rgba(56,189,248,.35)}
+.btn-ghost{background:rgba(120,126,140,.45);border-color:transparent}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:rgba(160,166,180,.55);transform:none}
+.hero-poster{border-radius:.6rem;box-shadow:0 18px 50px rgba(0,0,0,.7)}
+main{padding-left:1rem;padding-right:1rem}
+.section-title{font-size:1.5rem;font-weight:800;letter-spacing:-.01em;margin-bottom:1rem}
+.section-title::before{width:3px;box-shadow:none}
+.section-block{margin-bottom:2.4rem}
+.movie-card{background:#0f131c;border:0;border-radius:.55rem;box-shadow:0 6px 16px rgba(0,0,0,.5);transform:translateY(var(--lift)) scale(var(--sc,1));transition:transform .25s ease,box-shadow .25s ease;will-change:auto}
+.movie-card:hover,.movie-card:focus-visible,.movie-card.tv-focused{--lift:0px;--sc:1.07;z-index:5;border:0;box-shadow:0 20px 40px rgba(0,0,0,.75);outline:3px solid #fff;outline-offset:2px}
+.movie-card::before{display:none}
+.poster-wrap::after{width:56px;height:56px;margin:-28px 0 0 -28px;box-shadow:0 0 0 6px rgba(255,255,255,.18)}
+.movie-title{font-weight:700}
+.rail{scrollbar-width:none;gap:.9rem;padding:20px 8px 26px;margin:-20px -8px 0}
+.rail::-webkit-scrollbar{display:none}
+@media (min-width:900px){.rail{grid-auto-columns:210px}.grid{grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:1.3rem}}
+</style>
+<style id="pelisstream-tv-plus">
+/* ===== PelisStream · TV plus (solo visual + fluidez) ===== */
+.movie-synopsis{position:absolute;left:0;right:0;bottom:4.2rem;z-index:5;margin:0;padding:2.2rem .8rem .5rem;background:linear-gradient(transparent,rgba(7,9,15,.94) 55%);-webkit-line-clamp:3;opacity:0;pointer-events:none;transition:opacity .2s}
+.movie-card:hover .movie-synopsis,.movie-card:focus-visible .movie-synopsis,.movie-card.tv-focused .movie-synopsis{opacity:1}
+.home-btn:focus-visible,.pill:focus-visible,.mode-btn:focus-visible,.server-btn:focus-visible,.close-btn:focus-visible,.btn-play:focus-visible,.btn-ghost:focus-visible{outline:3px solid #fff;outline-offset:3px;transform:scale(1.05)}
+.home-btn:focus-visible,.pill:focus-visible,.mode-btn:focus-visible,.server-btn:focus-visible{background:var(--accent);color:#04121f;border-color:var(--accent)}
+.genre-row{content-visibility:auto;contain-intrinsic-size:auto 400px}
+@media (min-width:1700px){header,.hero-inner{padding-left:3.5rem;padding-right:3.5rem}main{padding-left:3.2rem;padding-right:3.2rem}}
+html.tv{scroll-behavior:auto}
+html.tv .movie-card,html.tv .hero.entering .hero-content,html.tv .hero.entering .hero-poster,html.tv .sk,html.tv .skeleton-card{animation:none!important}
+html.tv .movie-card,html.tv .poster-wrap img{transition:transform .15s ease-out}
+html.tv .movie-card:hover,html.tv .movie-card:focus-visible{box-shadow:none}
+</style>
 </head>
 <body>
 
@@ -3781,5 +3829,94 @@
       }, { capture: true });
     })();
   </script>
+<script id="pelisstream-tv-plus-js">
+(function(){
+const isTv=/Web0S|webOS|SmartTV/i.test(navigator.userAgent);
+if(isTv)document.documentElement.classList.add("tv");
+const $=id=>document.getElementById(id);
+
+/* 1. Filas por género (estilo Netflix) */
+const ROWS=[["Action","🎬 Acción"],["Drama","🎭 Drama"],["Sci-Fi","🚀 Sci-Fi"],["Horror","😱 Terror"],["Animation","🍿 Animación"],["Comedy","😂 Comedia"],["Thriller","🔪 Suspenso"]];
+const rowsEl=document.createElement("div");rowsEl.id="genreRows";
+document.querySelector(".catalog-block").before(rowsEl);
+let rowGen=0;
+const rowIO=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){rowIO.unobserve(en.target);fillRow(en.target);}}),{rootMargin:"900px 0px"});
+function buildRows(){
+  rowsEl.innerHTML="";const gen=++rowGen;
+  ROWS.forEach(([g,label])=>{const s=document.createElement("section");s.className="section-block genre-row";s.dataset.g=g;s.dataset.gen=gen;
+    s.innerHTML='<h3 class="section-title">'+label+'</h3><div class="rail"></div>';rowsEl.appendChild(s);rowIO.observe(s);});
+}
+async function fillRow(s){
+  const gen=+s.dataset.gen;
+  try{
+    const type=contentMode==="series"?"series":"movie";
+    const r=await fetch(CINEMETA+"/catalog/"+type+"/top/genre="+encodeURIComponent(s.dataset.g)+".json");
+    const d=await r.json();if(gen!==rowGen)return;
+    const rail=s.querySelector(".rail"),frag=document.createDocumentFragment();
+    (d.metas||[]).slice(0,14).forEach(m=>frag.appendChild(createMovieCard(m)));
+    rail.appendChild(frag);if(!rail.children.length)s.remove();
+  }catch(e){if(gen===rowGen)s.remove();}
+}
+const _fm=fetchMovies;
+fetchMovies=function(q){rowsEl.hidden=!(q==="top");if(q==="top"&&!rowsEl.children.length)buildRows();return _fm.apply(this,arguments);};
+const _sm=setMode;
+setMode=function(m){if(m!==contentMode)rowsEl.innerHTML="";return _sm.apply(this,arguments);};
+$("searchInput").addEventListener("input",e=>{rowsEl.hidden=!!e.target.value.trim()||feed.query!=="top";});
+
+/* 2. Banner rotativo */
+const _uh=updateHero;let cTimer=null;
+updateHero=function(q,movies){
+  _uh(q,movies);clearInterval(cTimer);
+  if(!(q==="top"||q.startsWith("genre:"))||!movies||movies.length<2)return;
+  const list=movies.filter(m=>m.poster).slice(0,6);if(list.length<2)return;let i=0;
+  cTimer=setInterval(()=>{const h=$("hero");
+    if(document.hidden||!h.classList.contains("show")||h.classList.contains("paused")||h.contains(document.activeElement)||document.body.classList.contains("modal-open"))return;
+    i=(i+1)%list.length;_uh(q,[list[i]]);},9000);
+};
+
+/* 3. Botón Atrás: cierra reproductor y ventanas (también con el foco dentro del video) */
+const ids=["playerSection","detailsModal","surpriseModal","profileModal"];
+const isOpen=i=>$(i)&&$(i).classList.contains("open");
+const anyOpen=()=>ids.some(isOpen);
+let pushed=false,st=null;
+const sync=()=>{clearTimeout(st);st=setTimeout(()=>{const o=anyOpen();
+  if(o&&!pushed){history.pushState({ps:1},"");pushed=true;}
+  else if(!o&&pushed){pushed=false;history.back();}},60);};
+const mo=new MutationObserver(sync);
+ids.forEach(i=>$(i)&&mo.observe($(i),{attributes:true,attributeFilter:["class"]}));
+window.addEventListener("popstate",()=>{
+  if(!pushed)return;pushed=false;
+  if(isOpen("playerSection"))closePlayer();
+  else if(isOpen("profileModal"))closeProfile();
+  else if(isOpen("surpriseModal"))closeSurprise();
+  else if(isOpen("detailsModal"))closeDetails();
+  if(anyOpen()){history.pushState({ps:1},"");pushed=true;}
+});
+
+/* 4. Sin teclado automático al abrir en la TV */
+if(isTv){const s=$("searchInput"),b=()=>s.blur();b();window.addEventListener("load",b);setTimeout(b,800);}
+
+/* 5. Recordar el último servidor elegido */
+const LS_SRV="pelisstream_server";let inPlay=false;
+const _sw=switchServer;
+switchServer=function(n){if(inPlay){const l=+lsRead(LS_SRV,0);if(l>=1&&l<=4)n=l;}return _sw.call(this,n);};
+["playMovie","playEpisode"].forEach(name=>{
+  const f=window[name];if(typeof f!=="function")return;
+  window[name]=function(){inPlay=true;try{return f.apply(this,arguments);}finally{inPlay=false;}};
+});
+document.querySelectorAll(".server-btn").forEach((b,i)=>b.addEventListener("click",()=>lsWrite(LS_SRV,i+1)));
+
+/* 6. Póster de respaldo local (sin depender de servicios externos) */
+const PH="data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450"><rect width="300" height="450" fill="#111827"/><text x="150" y="225" fill="#64748b" font-family="sans-serif" font-size="22" text-anchor="middle">Sin póster</text></svg>');
+document.addEventListener("error",e=>{const t=e.target;
+  if(t&&t.tagName==="IMG"&&!t.dataset.ph&&(/placeholder/.test(t.src)||t.closest(".poster-wrap,.hero-poster,.details-poster"))){t.dataset.ph=1;t.src=PH;}},true);
+
+/* Fluidez: en TV, el desplazamiento horizontal de las filas es directo */
+const _sv=Element.prototype.scrollIntoView;
+Element.prototype.scrollIntoView=function(o){
+  if(isTv&&o&&typeof o==="object"&&this.closest&&this.closest(".rail"))o=Object.assign({},o,{behavior:"auto"});
+  return _sv.call(this,o);};
+})();
+</script>
 </body>
 </html>

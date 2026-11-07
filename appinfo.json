@@ -1,6 +1,6 @@
 {
   "id": "com.pelisstream.app",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "vendor": "PelisStream",
   "type": "web",
   "main": "index.html",
